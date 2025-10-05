@@ -72,7 +72,7 @@ EDB_atividade2/
 ├── teste.cpp                    # Arquivo principal que executa os testes
 
 ```
-<a name="c3"></a>
+<a name="c4"></a>
 
 ##  Compilação e Execução
 ###  Via Terminal (Windows/PowerShell)
