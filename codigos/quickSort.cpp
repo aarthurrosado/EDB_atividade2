@@ -2,69 +2,77 @@
 #include <ctime>
 using namespace std;
 
-int particiona(int arr[], int inicio, int fim, int &comparacoes, int &trocas) {
-    int pivo = arr[(inicio + fim) / 2]; // escolhe o elemento do meio como pivô
-    int i = inicio; // ponteiro que avança da esquerda para a direita
-    int j = fim;    // ponteiro que recua da direita para a esquerda
+void quickSortIterativo(int v[], int tam, int &comp, int &troca) {
+    int pilha[10000]; // pilha usada para simular a recursão
+    int topo = -1;    // controla o topo da pilha
 
-    while (i <= j) {
-        // avança i enquanto o elemento for menor que o pivô
-        while (arr[i] < pivo) {
-            comparacoes++; // conta cada comparação feita
-            i++;
-        }
+    // empilha os índices inicial e final do vetor
+    pilha[++topo] = 0;
+    pilha[++topo] = tam - 1;
 
-        // recua j enquanto o elemento for maior que o pivô
-        while (arr[j] > pivo) {
-            comparacoes++; // conta cada comparação feita
-            j--;
-        }
+    // enquanto houver subvetores a serem processados
+    while (topo >= 0) {
+        int fim = pilha[topo--]; // desempilha o índice final
+        int ini = pilha[topo--]; // desempilha o índice inicial
 
-        // quando os ponteiros se cruzam, faz a troca se necessário
-        if (i <= j) {
-            if (i != j) { // evita trocar o mesmo elemento
-                int aux = arr[i];
-                arr[i] = arr[j];
-                arr[j] = aux;
-                trocas++; // incrementa o contador de trocas
+        int pivo = v[(ini + fim) / 2]; // escolhe o elemento central como pivô
+        int i = ini, j = fim;          // ponteiros para percorrer o vetor
+
+        // particiona o vetor em torno do pivô
+        while (i <= j) {
+            while (v[i] < pivo) { i++; comp++; } // avança i até achar valor maior que o pivô
+            while (v[j] > pivo) { j--; comp++; } // recua j até achar valor menor que o pivô
+
+            if (i <= j) {
+                // realiza a troca entre os elementos fora de posição
+                int aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+                i++;
+                j--;
+                troca++; // conta a troca realizada
             }
-            i++;
-            j--;
         }
-    }
 
-    return i; // retorna o índice onde o vetor será dividido
-}
+        // empilha as novas partições geradas (lado esquerdo e direito)
+        if (ini < j) {
+            pilha[++topo] = ini;
+            pilha[++topo] = j;
+        }
 
-// função recursiva responsável por ordenar as partições
-void quickSort(int arr[], int inicio, int fim, int &comparacoes, int &trocas) {
-    if (inicio < fim) { // condição de parada da recursão
-        int indice = particiona(arr, inicio, fim, comparacoes, trocas); // particiona o vetor
-        quickSort(arr, inicio, indice - 1, comparacoes, trocas); // ordena a parte esquerda
-        quickSort(arr, indice, fim, comparacoes, trocas);        // ordena a parte direita
+        if (i < fim) {
+            pilha[++topo] = i;
+            pilha[++topo] = fim;
+        }
     }
 }
 
 /*
 int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int comparacoes = 0, trocas = 0;
+    int numeros[] = {64, 23, 91, 12, 45, 10, 3, 77};
+    int n = sizeof(numeros) / sizeof(numeros[0]);
+    int comparas = 0, trocas = 0;
 
-    clock_t inicio = clock();
-    quickSort(arr, 0, n - 1, comparacoes, trocas);
+    cout << "Antes da ordenacao:\n";
+    for (int i = 0; i < n; i++) cout << numeros[i] << " ";
+    cout << "\n\n";
+
+    clock_t ini = clock();
+    quickSortIterativo(numeros, n, comparas, trocas);
     clock_t fim = clock();
 
-    double tempo = double(fim - inicio) / CLOCKS_PER_SEC * 1000;
+    double tempo = double(fim - ini) / CLOCKS_PER_SEC * 1000.0;
 
-    cout << "Vetor ordenado: ";
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
-    cout << "\n";
+    cout << "Depois da ordenacao:\n";
+    for (int i = 0; i < n; i++) {
+        cout << numeros[i];
+        if (i < n - 1) cout << ", ";
+    }
+    cout << "\n\n";
 
-    cout << "Comparacoes: " << comparacoes << endl;
-    cout << "Trocas: " << trocas << endl;
-    cout << "Tempo: " << tempo << " ms" << endl;
+    cout << "Comparacoes feitas : " << comparas << endl;
+    cout << "Trocas registradas : " << trocas << endl;
+    cout << "Tempo aproximado   : " << tempo << " ms" << endl;
 
     return 0;
 }
