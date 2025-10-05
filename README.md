@@ -40,6 +40,32 @@ Os tempos de execução foram coletados e armazenados no arquivo `resultados.csv
 - **Tempo de execução (ms)**
 
 ---
+## Estrutura esperada 
+
+EDB_atividade2/
+│
+├── codigos_implementados/       # Implementações dos algoritmos de ordenação (.cpp)
+│   ├── bubblesort.cpp
+│   ├── insertionsort.cpp
+│   ├── mergesort.cpp
+│   ├── quicksort.cpp
+│   └── selectionsort.cpp
+│
+├── dados/                       # Arquivos de resultados (.csv)
+│   └── resultados.csv
+│
+├── imagens/                     # Gráficos e visualizações geradas
+│   ├── comparativo_tempo.png
+│   └── desempenho_algoritmos.png
+│
+├── output/                      # Pasta para os executáveis gerados
+│   └── teste.exe
+│
+├── teste.cpp                    # Arquivo principal que executa os testes
+│
+├── README.md                    # Documentação do projeto
+│
+└── IMD0029 - Atividade 2.pdf    # Relatório teórico entregue na disciplina
 
 ##  Compilação e Execução
 ###  Via Terminal (Windows/PowerShell)
