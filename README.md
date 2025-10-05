@@ -74,3 +74,4 @@ depois execute:
 ```bash
 .\teste.exe
 ```
+<img src="prompt.png" alt="Execução dos testes">
