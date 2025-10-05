@@ -41,7 +41,7 @@ Os tempos de execução foram coletados e armazenados no arquivo `resultados.csv
 
 ---
 ## Estrutura esperada 
-
+```
 EDB_atividade2/
 │
 ├── codigos_implementados/       # Implementações dos algoritmos de ordenação (.cpp)
@@ -66,7 +66,7 @@ EDB_atividade2/
 ├── README.md                    # Documentação do projeto
 │
 └── IMD0029 - Atividade 2.pdf    # Relatório teórico entregue na disciplina
-
+```
 ##  Compilação e Execução
 ###  Via Terminal (Windows/PowerShell)
 No diretório raiz do projeto, execute:
