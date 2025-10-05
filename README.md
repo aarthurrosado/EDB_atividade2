@@ -62,10 +62,7 @@ EDB_atividade2/
 │   └── teste.exe
 │
 ├── teste.cpp                    # Arquivo principal que executa os testes
-│
-├── README.md                    # Documentação do projeto
-│
-└── IMD0029 - Atividade 2.pdf    # Relatório teórico entregue na disciplina
+
 ```
 ##  Compilação e Execução
 ###  Via Terminal (Windows/PowerShell)
