@@ -99,7 +99,7 @@ int main() {
             gerarVetor(vetor, n, tipo);
             c = t = 0;
             ini = clock();
-            quickSortIterativo(vetor, n, c, t);
+            quicksort(vetor, n, c, t);
             fim = clock();
             tempo = (double)(fim - ini) / CLOCKS_PER_SEC;
             tempo = tempo * 1000; // converte pra ms
