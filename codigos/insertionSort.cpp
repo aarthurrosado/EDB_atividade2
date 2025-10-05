@@ -2,39 +2,47 @@
 #include <ctime>
 using namespace std;
 
-void insertionSort(int arr[], int n, int &comparacoes, int &trocas) {
-    comparacoes = 0;
-    trocas = 0;
-    for (int i = 1; i < n; i++) {
-        int chave = arr[i];
-        int j = i - 1;
-        // elementos maiores para direita
-        while (j >= 0 && arr[j] > chave) {
-            comparacoes++;
-            arr[j + 1] = arr[j];
-            j--;
-            trocas++;
+void insertionsort(int vetor[], int tam, int &contaComp, int &contaTroca) {
+    contaComp = 0;   // inicia o contador de comparacoes
+    contaTroca = 0;  // inicia o contador de trocas 
+
+    // percorre o vetor, a partir do segundo elemento do vetor
+    for (int i = 1; i < tam; i++) {
+        int pivo = vetor[i];   // elemento a ser inserido na parte ordenada
+        int k = i - 1;         // indice do elemento anterior
+
+        // desloca elementos maiores que o pivo
+        while (k >= 0 && vetor[k] > pivo) {
+            contaComp++;               // insere as comparacoes
+            vetor[k + 1] = vetor[k];   
+            k--;                       
+            contaTroca++;              // Conta o deslocamento
         }
-        if (j >= 0) comparacoes++;
-        arr[j + 1] = chave;
+
+        if (k >= 0)
+            contaComp++; // incrementa a comparacao
+
+        vetor[k + 1] = pivo;  // insere pivo na posicao correta
     }
 }
 
+/*
 int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int comparacoes, trocas;
-    clock_t inicio = clock();
-    insertionSort(arr, n, comparacoes, trocas);
+    int lista[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(lista) / sizeof(lista[0]);
+    int comps, trocas;
+    clock_t ini = clock();
+    insertionsort(lista, n, comps, trocas);
     clock_t fim = clock();
-    double tempo = double(fim - inicio) / CLOCKS_PER_SEC * 1000;
-    cout << "Vetor ordenado: ";
+    double tempoMs = double(fim - ini) / CLOCKS_PER_SEC * 1000.0;
+    cout << "Sequencia final: ";
     for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
+        cout << lista[i] << " ";
     cout << "\n";
-    cout << "Comparacoes: " << comparacoes << endl;
-    cout << "Trocas: " << trocas << endl;
-    cout << "Tempo de execucao: " << tempo << " ms" << endl;
+    cout << "Comparacoes feitas: " << comps << endl;
+    cout << "Trocas registradas: " << trocas << endl;
+    cout << "Tempo gasto: " << tempoMs << " ms\n";
 
     return 0;
 }
+*/
