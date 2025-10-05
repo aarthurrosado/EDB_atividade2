@@ -27,10 +27,10 @@ int main() {
     long long comparacoes, trocas;
 
     clock_t start = clock();
-    bubbleSort(arr, n, comparacoes, trocas);
+    bubblesort(arr, n, comparacoes, trocas);
     clock_t fim = clock();
 
-    double tempo = double(start - inicio) / CLOCKS_PER_SEC * 1000;
+    double tempo = double(fim - start) / CLOCKS_PER_SEC * 1000;
 
     cout << "Vetor ordenado: ";
     for (int i = 0; i < n; i++)
