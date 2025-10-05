@@ -68,5 +68,9 @@ EDB_atividade2/
 ###  Via Terminal (Windows/PowerShell)
 No diretório raiz do projeto, execute:
 ```bash
-g++ -Wall -Wextra -O2 -Iinclude codigos/*.cpp -o output/teste.exe
-.\output\teste.exe
+ g++ .\teste.cpp -o teste.exe
+```
+depois execute:
+```bash
+.\teste.exe
+```
