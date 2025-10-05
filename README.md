@@ -5,13 +5,21 @@
 **Instituição:** UFRN  
 
 ---
+##  Sumário
+1. [Descrição do Trabalho](#c1)  
+2. [Algoritmos Implementadas](#c2)  
+3. [Estrutura do Repositório](#c3)  
+4. [Compilação e Execução](#c4)  
 
+---
+<a name="c1"></a>1. Descrição do Trabalho
 ## Descrição do Trabalho
 Este repositório contém a implementação e análise de desempenho de **algoritmos de ordenação**, desenvolvidos para a Atividade 2 da disciplina **Estruturas de Dados**.  
 O objetivo principal é comparar o tempo de execução entre os métodos de ordenação clássicos, aplicados a diferentes tamanhos e tipos de vetores.
 
 ---
 
+<a name="c2"></a>1. Algoritmos Implementadas
 ## Algoritmos Implementados
 Foram implementados os seguintes algoritmos de ordenação:
 
@@ -24,7 +32,6 @@ Foram implementados os seguintes algoritmos de ordenação:
 Cada algoritmo foi desenvolvido em um arquivo separado, dentro da pasta `codigos/`, permitindo modularidade e fácil manutenção.
 
 ---
-
 ## Metodologia
 Os testes foram realizados variando:
 - O **tamanho do vetor** (1.000, 5.000, 10.000 e 20.000 elementos);
@@ -40,6 +47,7 @@ Os tempos de execução foram coletados e armazenados no arquivo `resultados.csv
 - **Tempo de execução (ms)**
 
 ---
+<a name="c3"></a>1. Estrutura do Repositório
 ## Estrutura esperada 
 ```
 EDB_atividade2/
@@ -64,6 +72,8 @@ EDB_atividade2/
 ├── teste.cpp                    # Arquivo principal que executa os testes
 
 ```
+<a name="c3"></a>1. Compilação e Execução
+
 ##  Compilação e Execução
 ###  Via Terminal (Windows/PowerShell)
 No diretório raiz do projeto, execute:
