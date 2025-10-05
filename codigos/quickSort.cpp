@@ -72,7 +72,7 @@ int main() {
 
     cout << "Comparacoes feitas : " << comparas << endl;
     cout << "Trocas registradas : " << trocas << endl;
-    cout << "Tempo aproximado   : " << tempo << " ms" << endl;
+    cout << "Tempo : " << tempo << " ms" << endl;
 
     return 0;
 }
