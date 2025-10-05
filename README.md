@@ -12,14 +12,14 @@
 4. [Compilação e Execução](#c4)  
 
 ---
-<a name="c1"></a>1. Descrição do Trabalho
+<a name="c1"></a>
 ## Descrição do Trabalho
 Este repositório contém a implementação e análise de desempenho de **algoritmos de ordenação**, desenvolvidos para a Atividade 2 da disciplina **Estruturas de Dados**.  
 O objetivo principal é comparar o tempo de execução entre os métodos de ordenação clássicos, aplicados a diferentes tamanhos e tipos de vetores.
 
 ---
 
-<a name="c2"></a>1. Algoritmos Implementadas
+<a name="c2"></a>
 ## Algoritmos Implementados
 Foram implementados os seguintes algoritmos de ordenação:
 
@@ -47,7 +47,7 @@ Os tempos de execução foram coletados e armazenados no arquivo `resultados.csv
 - **Tempo de execução (ms)**
 
 ---
-<a name="c3"></a>1. Estrutura do Repositório
+<a name="c3"></a>
 ## Estrutura esperada 
 ```
 EDB_atividade2/
@@ -72,7 +72,7 @@ EDB_atividade2/
 ├── teste.cpp                    # Arquivo principal que executa os testes
 
 ```
-<a name="c3"></a>1. Compilação e Execução
+<a name="c3"></a>
 
 ##  Compilação e Execução
 ###  Via Terminal (Windows/PowerShell)
