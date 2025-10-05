@@ -2,7 +2,7 @@
 #include <ctime>
 using namespace std;
 
-void quickSortIterativo(int v[], int tam, int &comp, int &troca) {
+void quicksort(int v[], int tam, int &comp, int &troca) {
     int pilha[10000]; // pilha usada para simular a recursão
     int topo = -1;    // controla o topo da pilha
 
@@ -58,7 +58,7 @@ int main() {
     cout << "\n\n";
 
     clock_t ini = clock();
-    quickSortIterativo(numeros, n, comparas, trocas);
+    quicksort(numeros, n, comparas, trocas);
     clock_t fim = clock();
 
     double tempo = double(fim - ini) / CLOCKS_PER_SEC * 1000.0;
